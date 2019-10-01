@@ -157,7 +157,7 @@ handled top-down, so make sure to put more specific rules above the more
 general ones. Authorization things (like authBasic) act as a 'barrier' and
 should be placed above the URLs they protect.
 */
-HttpdBuiltInUrl builtInUrls[]={
+HttpdBuiltInUrl builtInUrls[] = {
 	ROUTE_CGI_ARG("*", cgiRedirectApClientToHostname, "esp8266.nonet"),
 	ROUTE_REDIRECT("/", "/index.tpl"),
 
@@ -174,8 +174,8 @@ HttpdBuiltInUrl builtInUrls[]={
 	ROUTE_CGI("/flash/reboot", cgiRebootFirmware),
 
 	//Routines to make the /wifi URL and everything beneath it work.
-//Enable the line below to protect the WiFi configuration with an username/password combo.
-//	{"/wifi/*", authBasic, myPassFn},
+	//Enable the line below to protect the WiFi configuration with an username/password combo.
+	//	{"/wifi/*", authBasic, myPassFn},
 
 	ROUTE_REDIRECT("/wifi", "/wifi/wifi.tpl"),
 	ROUTE_REDIRECT("/wifi/", "/wifi/wifi.tpl"),
@@ -185,6 +185,7 @@ HttpdBuiltInUrl builtInUrls[]={
 	ROUTE_CGI("/wifi/connstatus.cgi", cgiWiFiConnStatus),
 	ROUTE_CGI("/wifi/setmode.cgi", cgiWiFiSetMode),
 	ROUTE_CGI("/wifi/startwps.cgi", cgiWiFiStartWps),
+	ROUTE_CGI("/wifi/ap", cgiWiFiAPSettings),
 
 	ROUTE_REDIRECT("/websocket", "/websocket/index.html"),
 	ROUTE_WS("/websocket/ws.cgi", myWebsocketConnect),

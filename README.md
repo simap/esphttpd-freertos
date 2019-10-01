@@ -28,7 +28,7 @@ Load onto your esp32 and monitor
 
 ## Tips
 Make sure the ```ESP_IDF``` environment variable is set.   
-``` export ESP_IDF=/home/user/esp-idf ``` (replace the path as appropriate)
+``` export IDF_PATH=/home/user/esp-idf ``` (replace the path as appropriate)
 
 To speed-up the build process, include the ```-j``` option to build on multiple CPU threads.  i.e.  
 ```make -j8 flash monitor```
