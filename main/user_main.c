@@ -371,7 +371,11 @@ void user_init(void) {
 //	captdnsInit();
 
 #ifdef CONFIG_ESPHTTPD_USE_ESPFS
-	espFsInit((void*)(image_espfs_start));
+	EspFsConfig espfs_conf = {
+		.memAddr = espfs_image_bin,
+	};
+	EspFs* fs = espFsInit(&espfs_conf);
+    httpdRegisterEspfs(fs);
 #endif // CONFIG_ESPHTTPD_USE_ESPFS
 
 	tcpip_adapter_init();

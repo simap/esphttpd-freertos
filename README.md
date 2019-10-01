@@ -26,6 +26,10 @@ Load onto your esp32 and monitor
 
 ```make flash monitor```
 
+If you wish to use CMake, you should make sure you have cmake and ninja-build installed.  While not necessary, ninja-build speeds up the build process a lot.  The build and loading steps are similar:
+
+`idf.py build` and `idf.py flash monitor`
+
 ## Tips
 Make sure the ```ESP_IDF``` environment variable is set.   
 ``` export IDF_PATH=/home/user/esp-idf ``` (replace the path as appropriate)

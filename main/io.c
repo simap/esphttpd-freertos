@@ -24,7 +24,7 @@
 
 // these for erase partition:
 #include "esp_ota_ops.h"
-#include "esp_flash_data_types.h"
+#include "esp_flash_partitions.h"
 #include "esp_image_format.h"
 
 static const char* TAG = "io.c";
